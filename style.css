@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  padding: 3% 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 101;
+  position: absolute;
+}
+
+.logo {
+  color: #FFC26F;
+  letter-spacing: 4px;
+  z-index: 1001;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li a {
+  color: #dde6ed;
+  font-size: 12px;
+  padding: 0.8rem 1.2rem;
+  margin-left: 0.5rem;
+  border-radius: 8px;
+  letter-spacing: 2px;
+}
+
+nav ul li a:hover {
+  background-color: #27374d;
+}
+
+a.active,
+a:hover {
+  background-color: #27374d;
+  transition: 0.3s;
+  color: white;
+}
+
+.checkbtn {
+  font-size: 22px;
+  color: #f5efe7;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* MAIN */
+
+main {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(240deg, #618097 0%, #526d82 30%, #27374d 75%);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 4rem;
+  padding: 0 15%;
+}
+
+.main-text h4 {
+  font-size: 14px;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.main-text h2 {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.main-text p {
+  font-size: 15px;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.main-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6rem;
+}
+
+.main-img img {
+  width: 275px;
+  height: auto;
+  animation: float 6s ease infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.main-text a {
+  color: white;
+  background-color: #55657a;
+  font-size: 14px;
+  padding: 8px 24px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: all ease 0.5s;
+  display: inline-block;
+}
+
+.main-text a:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  transform: translateY(-6px);
+}
+
+.main-text a.more {
+  background: transparent;
+  border: 1px solid white;
+  margin-left: 8px;
+}
+
+/* ICONS */
+
+.icons-link {
+  position: absolute;
+  bottom: 0;
+  left: 43.5%;
+  padding: 1% 0;
+  transform: translateY(-50%);
+}
+
+.icons-link a i {
+  font-size: 1.6rem;
+  color: white;
+  display: inline-block;
+  margin: 0 1rem;
+  transition: all ease 0.5s;
+}
+
+.icons-link a i:hover {
+  color: #9db2bf;
+  transform: translateY(-5px);
+}
+
+@media (max-width: 1242px) {
+  nav {
+    padding: 4% 10%;
+    transition: 0.2s;
+  }
+
+  main {
+    padding: 0 12%;
+    transition: 0.2s;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav {
+    padding: 5% 10%;
+    transition: 0.2s;
+  }
+  main {
+    gap: 0rem;
+  }
+  .main-text h4 {
+    font-size: 12px;
+  }
+  .main-text h2 {
+    font-size: 2.5rem;
+    transition: 0.4s;
+  }
+  .main-text p {
+    font-size: 12px;
+    margin-bottom: 1.5rem;
+    transition: 0.4s;
+  }
+  .main-text a {
+    font-size: 12px;
+    padding: 8px 20px;
+  }
+  .main-img img {
+    width: 220px;
+    transition: 0.4s;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 6% 10%;
+  }
+  .checkbtn {
+    display: block;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .icons-link {
+    display: none;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #27374d;
+    top: 0;
+    right: -100%;
+    transition: all 0.8s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  ul li {
+    margin: 1.5rem;
+  }
+
+  nav ul li a {
+    letter-spacing: 3px;
+  }
+  nav ul li a:hover {
+    background: none;
+  }
+  a.active,
+  a:hover {
+    background: none;
+    color: #FFC26F;
+  }
+
+  #check:checked ~ ul {
+    right: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .icons-link {
+    display: none;
+    transition: 0.4s;
+  }
+  main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    height: 100%;
+    transition: 0.4s;
+  }
+  .main-img {
+    margin: 2.5rem 0;
+    transition: 0.4s;
+  }
+  .main-img img {
+    width: 220px;
+    height: auto;
+  }
+  .main-text {
+    margin-top: 7.5rem;
+    transition: 0.4s;
+  }
+}
