@@ -1,7 +1,7 @@
 # responsive-landing-page-template
 
-Responsivel landing page using HTML and CSS only
+Responsive landing page using HTML and CSS only
 
-
+Date of deployment: 06-18-23
 
 Inspired by Tahmid Ahmed on YouTube
